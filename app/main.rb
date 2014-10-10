@@ -19,7 +19,8 @@ use Rack::MethodOverride
 require_relative 'controllers/users'
 # Setup DataMapper
 if ENV["RACK_ENV"] == "production"
-  DataMapper.setup(:default, "postgres://gafytmebscxehl:OnybE67aMWekzw8lY6bf-nT5B0@ec2-54-225-101-18.compute-1.amazonaws.com:5432/d59r3gl85st6bc")
+  #DataMapper.setup(:default, "postgres://gafytmebscxehl:OnybE67aMWekzw8lY6bf-nT5B0@ec2-54-225-101-18.compute-1.amazonaws.com:5432/d59r3gl85st6bc")
+  DataMapper.setup(:default, ENV["DATABASE_URL"])
 else
   DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 end
@@ -31,3 +32,4 @@ get '/' do
 end
 #> heroku addons:add heroku-postgresql:dev
 #> git push heroku branch:master
+#> heroku git:remote -a falling-wind-1624 -r some_user_defined_name

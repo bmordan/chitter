@@ -20,4 +20,9 @@ feature "In order to use chitter I" do
     expect(User.count).to eq 1
   end
 
+  scenario "have my password stored securely" do
+    user = User.first
+    expect(user.password_digest).to_not eq("passw0rd")
+  end
+
 end
