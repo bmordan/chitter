@@ -17,6 +17,7 @@ use Rack::Flash
 use Rack::MethodOverride
 # Setup logic controllers (routes)
 require_relative 'controllers/users'
+require_relative 'controllers/peeps'
 # Setup DataMapper
 if ENV["RACK_ENV"] == "production"
   #DataMapper.setup(:default, "postgres://gafytmebscxehl:OnybE67aMWekzw8lY6bf-nT5B0@ec2-54-225-101-18.compute-1.amazonaws.com:5432/d59r3gl85st6bc")
@@ -28,7 +29,7 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 # Set the user to the first page
 get '/' do
-  redirect '/users/signup'
+  redirect '/peeps/home'
 end
 #> heroku addons:add heroku-postgresql:dev
 #> git push heroku branch:master

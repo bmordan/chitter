@@ -25,4 +25,10 @@ feature "In order to use chitter I" do
     expect(user.password_digest).to_not eq("passw0rd")
   end
 
+  scenario "want to sign in with my password" do
+    visit '/peeps/home'
+    click_link 'log in'
+    expect(page).to have_css('input')
+  end
+
 end
