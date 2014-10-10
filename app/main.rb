@@ -8,8 +8,8 @@ require 'data_mapper'
 #Set up database tables for sinatra
 require_relative 'models/user'
 # Setup for Sinatra
+set :root, File.dirname(__FILE__)
 set :views, Proc.new { File.join(root, "views") }
-set :public_folder, 'public'
 set :partial_template_engine, :erb
 enable :sessions
 set :session_secret, 'OYJEVFIKHZORXTUXXOYXXGPDEYLLPWXD'

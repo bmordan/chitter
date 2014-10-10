@@ -1,6 +1,6 @@
 module SignUp
   def signup(email = "test@test.org",password = "passw0rd")
-    visit '/signup'
+    visit '/'
     fill_in :email,    :with => email
     fill_in :name,     :with => "User Name"
     fill_in :handle,   :with => "username"
