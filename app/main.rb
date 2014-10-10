@@ -18,6 +18,13 @@ use Rack::MethodOverride
 # Setup logic controllers (routes)
 require_relative 'controllers/users'
 # Setup DataMapper
-ENV["DATABASE_URL"].nil? ? DataMapper.setup(:default, "postgres://localhost/chitter_#{env}") : DataMapper.setup(:default, ENV["DATABASE_URL"])
+if ENV["RACK_ENV"] == "production"
+  DataMapper.setup(:default, ENV["DATABASE_URL"])
+else
+  DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
+end
 DataMapper.finalize
 DataMapper.auto_upgrade!
+
+#> heroku addons:add heroku-postgresql:dev
+#> 
