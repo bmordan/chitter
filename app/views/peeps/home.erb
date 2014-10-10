@@ -1,1 +1,5 @@
-Hay <%= @name %>
+<% if @name %>
+  Hay <%= @name %>
+<% else %>
+  Welcome to Chitter
+<% end %>

@@ -18,10 +18,6 @@ use Rack::MethodOverride
 # Setup logic controllers (routes)
 require_relative 'controllers/users'
 # Setup DataMapper
-DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
+ENV["DATABASE_URL"].nil? ? DataMapper.setup(:default, "postgres://localhost/chitter_#{env}") : DataMapper.setup(:default, ENV["DATABASE_URL"])
 DataMapper.finalize
 DataMapper.auto_upgrade!
-# Setup for visitors
-get '/' do
-  erb :index
-end

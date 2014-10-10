@@ -1,8 +1,8 @@
-get '/signup' do
+get '/users/signup' do
   erb :"users/signup"
 end
 
-post '/signup' do
+post '/users/signup' do
   @name = params[:name]
   erb :"peeps/home"
 end
