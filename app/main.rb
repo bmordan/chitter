@@ -1,5 +1,5 @@
 #Setup for the enviroment
-env = ENV["RACK_ENV"] || "dev"
+env = ENV["RACK_ENV"] || "development"
 #Setup for the app
 require 'sinatra'
 require 'sinatra/partial'
@@ -12,6 +12,7 @@ set :views, Proc.new { File.join(root, "views") }
 set :public_folder, 'public'
 set :partial_template_engine, :erb
 enable :sessions
+set :session_secret, 'OYJEVFIKHZORXTUXXOYXXGPDEYLLPWXD'
 use Rack::Flash
 use Rack::MethodOverride
 # Setup logic controllers (routes)
@@ -22,5 +23,5 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 # Setup for visitors
 get '/' do
-  welcome to chitter
+  erb :index
 end
