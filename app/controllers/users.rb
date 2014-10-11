@@ -7,14 +7,13 @@ post '/users/signup' do
     :email => params[:email],
     :name => params[:name],
     :handle => params[:handle],
-    :password_digest => params[:password]
+    :password => params[:password]
     )
   if @user.save
     session[:user_id] = @user.id
     redirect to '/peeps/home'
   else
-    flash.now[:errors] = @user.errors.full_messages
-    redirect to '/users/signup'
+    redirect to '/users/signup', errors: @user.errors.full_messages
   end
 end
 
@@ -28,8 +27,7 @@ post '/users/login' do
     session[:user_id] = @user.id
     redirect to '/peeps/home'
   else
-    flash[:errors] = ["Thats not #{params[:handle]}'s password"]
+    flash[:notice] = "Thats not #{params[:handle]}'s password"
     redirect to '/users/login'
-  end
-  
+  end 
 end

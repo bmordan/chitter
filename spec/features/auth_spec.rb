@@ -33,7 +33,7 @@ feature "In order to use chitter I" do
 
   scenario "have confidence my account is mine" do
     _wrongin
-    expect(page).to have_content('No. Wrong password')
+    expect(page).to have_css '.flash', :text => "Thats not or1gin's password"
   end
 
 end

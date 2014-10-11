@@ -1,4 +1,4 @@
-<% if !@user.nil? %>
+<% if @user %>
   Hay <%= @user.name %>
 <% else %>
   <a href="/users/login">log in</a>

@@ -13,6 +13,8 @@ class User
   property :updated_at,      DateTime
 
   #has n, :peeps
+
+  attr_reader :password
   
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
