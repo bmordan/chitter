@@ -9,11 +9,12 @@
 <body>
   <header>
     <img src="/images/DINO_CHITTER.svg">
+    <%= partial :nav %>
     <%= partial :flash %>
   </header>
   <main>
     <%= yield %>
   </main>
-  <footer></footer>
+  <footer><%= partial :footer %></footer>
 </body>
 </html>

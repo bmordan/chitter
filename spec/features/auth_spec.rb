@@ -28,12 +28,25 @@ feature "In order to use chitter I" do
 
   scenario "want to sign in with my password" do
     _signin
-    expect(page).to have_content('Hay First User')
+    expect(page).to have_content 'Hay First User'
+    expect(page).to have_content 'my peeps'
   end
 
-  scenario "have confidence my account is mine" do
+  scenario "have confidence the wrong password is not accepted" do
     _wrongin
     expect(page).to have_css '.flash', :text => "Thats not or1gin's password"
+  end
+
+  scenario "want to log out" do
+    _signin
+    click_link 'log out'
+    expect(page).to have_content "You have logged out"
+  end
+
+  scenario "when logged out I am unable to post peeps" do
+     _signin
+    click_link 'log out'
+    expect(page).to_not have_content 'my peeps' 
   end
 
 end

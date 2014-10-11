@@ -31,3 +31,9 @@ post '/users/login' do
     redirect to '/users/login'
   end 
 end
+
+get '/users/logout' do
+  redirect to '/users/login' if session[:user_id].nil?
+  session[:user_id] = nil
+  erb :"users/logout"
+end

@@ -1,0 +1,10 @@
+<nav>
+  <% if session[:user_id] %>
+    <a href="/peeps/home">all peeps</a>
+    <a href="/peeps/:user">my peeps</a>
+    <a href="/users/logout">log out</a>
+  <% else %>
+    <a href="/users/login">log in</a>
+    <a href="/users/signup">sign up</a>
+  <% end %>
+</nav>
