@@ -23,5 +23,4 @@ module SignUp
     fill_in :password, :with => "wrong"
     click_on 'Log in'
   end
-  
 end

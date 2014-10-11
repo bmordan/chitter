@@ -7,6 +7,7 @@ require 'rack-flash'
 require 'data_mapper'
 #Set up database tables for sinatra
 require_relative 'models/user'
+require_relative 'models/peep'
 # Setup for Sinatra
 set :root, File.dirname(__FILE__)
 set :views, Proc.new { File.join(root, "views") }
