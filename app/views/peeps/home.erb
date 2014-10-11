@@ -3,3 +3,12 @@
 <% else %>
   Hay you! Welcome
 <% end %>
+<% if @peeps %>
+  <% @peeps.each do |peep| %>
+      <blockquote>
+        <h1><%= peep.user.name %></h1>
+        <p><%= peep.peep %><p>
+        <caption><%= peep.user.handle %></caption>
+      </blockquote>
+  <% end %> 
+<% end %>

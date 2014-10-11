@@ -12,6 +12,8 @@ class User
   property :created_at,      DateTime
   property :updated_at,      DateTime
 
+  has n, :peeps
+
   attr_reader :password
   
   def password=(password)
