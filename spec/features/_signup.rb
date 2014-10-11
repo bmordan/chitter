@@ -15,4 +15,13 @@ module SignUp
     fill_in :password, :with => "passw0rd"
     click_on 'Log in'
   end
+
+  def _wrongin
+    visit '/peeps/home'
+    click_link 'log in'
+    fill_in :handle, :with => "or1gin"
+    fill_in :password, :with => "wrong"
+    click_on 'Log in'
+  end
+  
 end

@@ -23,7 +23,13 @@ get '/users/login' do
 end
 
 post '/users/login' do
-  @user = User.first(:handle => params[:handle])
-  session[:user_id] = @user.id
-  redirect to '/peeps/home'
+  @user = User.authenticate(params[:handle],params[:password])
+  if @user
+    session[:user_id] = @user.id
+    redirect to '/peeps/home'
+  else
+    flash[:errors] = ["Thats not #{params[:handle]}'s password"]
+    redirect to '/users/login'
+  end
+  
 end

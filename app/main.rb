@@ -34,3 +34,12 @@ end
 #> heroku addons:add heroku-postgresql:dev
 #> git push heroku branch:master
 #> heroku git:remote -a falling-wind-1624 -r some_user_defined_name
+#> heroku pg:reset DATABASE_URL --confirm gentle-eyrie-9191
+#> heroku logs --app gentle-eyrie-9191
+#> heroku run console --app gentle-eyrie-9191
+#> irb(main):001:0> require './app/main.rb'
+#=> true
+#irb(main):002:0> DataMapper.auto_migrate!
+
+
+

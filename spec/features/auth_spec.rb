@@ -31,4 +31,9 @@ feature "In order to use chitter I" do
     expect(page).to have_content('Hay First User')
   end
 
+  scenario "have confidence my account is mine" do
+    _wrongin
+    expect(page).to have_content('No. Wrong password')
+  end
+
 end
