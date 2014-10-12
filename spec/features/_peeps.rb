@@ -6,4 +6,9 @@ module PostPeep
       :user_id => user.id
     )
   end
+
+  def _poopone
+    peep = Peep.last
+    Poop.create(:poop => "a previous poop",:peep_id => peep.id)
+  end
 end

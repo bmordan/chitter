@@ -10,6 +10,11 @@ a:visited {color: rgb(255,255,255);}
 a:hover   {color: rgb(255,255,255);}
 a:active  {color: rgb(255,255,255);}
 header{width:100%;}
+header section h1.flash{
+  text-align: center;
+  font-size: 1.2em;
+  margin: 1em auto 1em auto;
+}
 /* users/signup */
 input[type=text], input[type=email], input[type=password]{
   display: block;
@@ -60,6 +65,7 @@ main h1 .tag{
   margin: -0.5em -1em 0em 0em;
 }
 blockquote{
+  background-color: rgb(230,230,255);
   padding: 9px;
   margin: 2em auto 2em auto;
   box-shadow: 4px 4px 4px #888888;
@@ -83,4 +89,9 @@ blockquote h2.reply{
   width:60px;
   height: 25px;
   font-size: 1em;
+}
+blockquote.poops{background-color: rgb(250,239,207);}
+p.poop{
+  text-align: right;
+  margin: 1em;
 }

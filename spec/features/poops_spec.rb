@@ -14,6 +14,7 @@ feature "OMG you can reply to a peep with a poop" do
   before(:each) do
     _signin
     _postone
+    _poopone
   end
 
   scenario "I have to reply to this peep" do
@@ -27,6 +28,11 @@ feature "OMG you can reply to a peep with a poop" do
      click_link 'poop'
      click_on 'Poop'
      expect(page).to have_content "You can't poop nout. Try again"   
+  end
+
+  scenario "I can see what other folk have pooped" do
+     visit '/poops/add/1'
+     expect(page).to have_content "a previous poop"
   end
 
 end

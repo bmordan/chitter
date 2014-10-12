@@ -7,7 +7,7 @@
          <%= peep.user.created_at.strftime("%-d %b %l:%M%P") %> by <%= peep.user.handle %>
          <% if session[:user_id].nil? %>
            <h2 class="reply">
-            <a href="/peeps/home">login to poop</a>
+            <a href="/peeps/home">login</a>
            </h2>
          <% else %>
            <h2 class="reply">
@@ -16,5 +16,8 @@
          <% end %>
         </p>
       </blockquote>
+
+      
+
   <% end %> 
 <% end %> 
