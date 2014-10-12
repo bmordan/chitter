@@ -80,7 +80,7 @@ blockquote p.handle{
 }
 blockquote h2.reply{
   display: block;
-  background-image: url('REPLY.svg');
+  background-image: url('../images/REPLY.svg');
   background-size: cover;
   float:right;
   text-align: right;
