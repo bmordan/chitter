@@ -13,7 +13,6 @@ gem "database_cleaner"
 group :test, :development do
   gem "rspec"
   gem "capybara"
-  gem "database_cleaner"
   gem "launchy"
   gem "shotgun"
 end
