@@ -25,4 +25,18 @@ feature "Posting peeps is wicked because" do
     expect(page).to have_css '.handle'
   end
 
+  scenario "i cant post if i'm logged out" do
+    visit '/users/logout'
+    visit '/'
+    expect(page).to_not have_content('+')
+  end
+
+  scenario "i can log in and bloody well peep" do
+    click_link '+'
+    fill_in :peep, :with => "my latest peep"
+    click_on 'Peep'
+    expect(Peep.count).to eq 2
+    #expect(page).to have_content "my latest peep"
+  end
+
 end  

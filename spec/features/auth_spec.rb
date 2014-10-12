@@ -29,7 +29,7 @@ feature "In order to use chitter I" do
   scenario "want to sign in with my password" do
     _signin
     expect(page).to have_content 'Hay First User'
-    expect(page).to have_content 'my peeps'
+    expect(page).to have_content '+'
   end
 
   scenario "have confidence the wrong password is not accepted" do
