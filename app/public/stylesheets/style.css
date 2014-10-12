@@ -90,8 +90,22 @@ blockquote h2.reply{
   height: 25px;
   font-size: 1em;
 }
-blockquote.poops{background-color: rgb(250,239,207);}
+blockquote.poops{
+  position: relative;
+  background-color: rgb(250,239,207);
+  width:59%;
+  margin: 1em 1em 1.3em 6em;
+  z-index:2;
+}
 p.poop{
   text-align: right;
-  margin: 1em;
+  margin: 0.5em;
+}
+blockquote.poops h2.reply{
+  padding: 0.2em 1em 0em 0em;
+  margin: -0.5em -1em 0.5em 0em;  
+  height: 20px;
+  width: 80px;
+  background-image: url('../images/POOPTAG.svg');
+  background-size: cover;
 }

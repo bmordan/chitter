@@ -13,7 +13,7 @@ feature "In order to use chitter I" do
 
   scenario "want to sing up" do
     _signup
-    expect(page).to have_content("Hay User Name")
+    expect(page).to have_content("log out")
   end
 
   scenario "join the users table" do
@@ -28,7 +28,7 @@ feature "In order to use chitter I" do
 
   scenario "want to sign in with my password" do
     _signin
-    expect(page).to have_content 'Hay First User'
+    expect(page).to_not have_content 'log in'
     expect(page).to have_content '+'
   end
 

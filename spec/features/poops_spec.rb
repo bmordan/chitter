@@ -31,7 +31,7 @@ feature "OMG you can reply to a peep with a poop" do
   end
 
   scenario "I can see what other folk have pooped" do
-     visit '/poops/add/1'
+     visit '/'
      expect(page).to have_content "a previous poop"
   end
 
