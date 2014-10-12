@@ -27,7 +27,7 @@ post '/users/login' do
     session[:user_id] = @user.id
     redirect to '/peeps/home'
   else
-    flash[:notice] = "Thats not #{params[:handle]}'s password"
+    params[:handle] == "" ? flash[:notice] = "Thats not going to work" : flash[:notice] = "Thats not #{params[:handle]}'s password"
     redirect to '/users/login'
   end 
 end

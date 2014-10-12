@@ -1,9 +1,11 @@
 <nav>
   <% if session[:user_id] %>
-    <a href="/peeps/add">+</a>
-    <a href="/users/logout">log out</a>
+    <a href="/peeps/add"><i class="fa fa-plus fa-2x"></i></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/users/logout"><i class="fa fa-sign-out fa-2x"></i></a>
   <% else %>
-    <a href="/users/login">log in</a>
+    <a href="/users/login"><i class="fa fa-sign-in fa-2x"></i></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/users/signup">sign up</a>
   <% end %>
 </nav>
