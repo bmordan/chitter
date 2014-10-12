@@ -8,6 +8,7 @@ gem "dm-postgres-adapter"
 gem "rack-flash3"
 gem "sinatra-partial"
 gem "sinatra-redirect-with-flash"
+gem "database_cleaner"
 
 group :test, :development do
   gem "rspec"
