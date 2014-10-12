@@ -3,6 +3,15 @@ require 'spec_helper'
 feature "Posting peeps is wicked because" do
 
   before(:each) do
+    User.create(
+      :email => "default@test.org",
+      :password => "passw0rd",
+      :name => "First User",
+      :handle => "or1gin"
+    )
+  end
+
+  before(:each) do
     _signin
     _postone
   end
@@ -13,7 +22,7 @@ feature "Posting peeps is wicked because" do
 
   scenario "i can see all the peeps in the world" do
     visit '/'
-    expect(page).to have_content "My first peep example for testing"
+    expect(page).to have_css '.handle'
   end
 
 end  

@@ -1,14 +1,14 @@
 <% if @user %>
-  Hay <%= @user.name %>
+  <h1 class="flash">Hay <%= @user.name %></h1>
 <% else %>
-  Hay you! Welcome
+  <h1 class="flash">Hay you! Welcome</h1>
 <% end %>
 <% if @peeps %>
   <% @peeps.each do |peep| %>
       <blockquote>
-        <h1><%= peep.user.name %></h1>
+        <h1><%= peep.user.name %><img src="/images/tag.svg" class="tag"></h1>
         <p><%= peep.peep %><p>
-        <caption><%= peep.user.handle %></caption>
+        <p class="handle"><%= peep.user.created_at %> <%= peep.user.handle %></p>
       </blockquote>
   <% end %> 
 <% end %>
