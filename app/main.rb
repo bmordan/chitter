@@ -10,7 +10,7 @@ require_relative 'models/user'
 require_relative 'models/peep'
 require_relative 'models/poop'
 require_relative './seed'
-include Seed #run in irb: _seed_users _seed_peeps
+include Seed #run in irb: _multiseed
 # Setup for Sinatra
 set :root, File.dirname(__FILE__)
 set :views, Proc.new { File.join(root, "views") }
@@ -22,6 +22,7 @@ use Rack::MethodOverride
 # Setup logic controllers (routes)
 require_relative 'controllers/users'
 require_relative 'controllers/peeps'
+require_relative 'controllers/poops'
 # Setup DataMapper
 if ENV["RACK_ENV"] == "production"
   #DataMapper.setup(:default, "postgres://gafytmebscxehl:OnybE67aMWekzw8lY6bf-nT5B0@ec2-54-225-101-18.compute-1.amazonaws.com:5432/d59r3gl85st6bc")

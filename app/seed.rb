@@ -1,5 +1,12 @@
 require 'database_cleaner'
 module Seed
+
+  def _multiseed
+    _seed_users
+    _seed_peeps
+    _seed_poops
+  end
+
   def _seed_users
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
@@ -25,6 +32,21 @@ module Seed
     users.each do |user|
       9.times {Peep.create(:peep => peepsample,:user_id => user.id)}
     end
+  end
+
+  def _seed_poops
+    Poop.create(
+      :poop => "nice peep <3",
+      :peep_id => 3)
+    Poop.create(
+      :poop => "hi jackie - iknow its you",
+      :peep_id => 3)
+    Poop.create(
+    :poop => "call us about your payment protection plan",
+    :peep_id => 5)
+    Poop.create(
+    :poop => "love it. you rock!",
+    :peep_id => 7)
   end
 
   def peepsample

@@ -3,12 +3,4 @@
 <% else %>
   <h1 class="flash">Hay you! Welcome</h1>
 <% end %>
-<% if @peeps %>
-  <% @peeps.each do |peep| %>
-      <blockquote>
-        <h1><%= peep.user.name %><img src="/images/tag.svg" class="tag"></h1>
-        <p><%= peep.peep %><p>
-        <p class="handle"><%= peep.user.created_at.strftime("%-d %b %l:%M%P") %> <%= peep.user.handle %></p>
-      </blockquote>
-  <% end %> 
-<% end %>
+<%= partial :peeps %>

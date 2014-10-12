@@ -4,11 +4,11 @@ body{
   font-family: 'Didact Gothic', sans-serif;
   font-size: 1em;
 }
-a{text-decoration: none;color: rgb(193,136,0);}
-a:link    {color: rgb(193,136,0);}
-a:visited {color: rgb(193,136,0);}
-a:hover   {color: rgb(193,136,0);}
-a:active  {color: rgb(193,136,0);}
+a{text-decoration: none;color: rgb(255,255,255);}
+a:link    {color: rgb(255,255,255);}
+a:visited {color: rgb(255,255,255);}
+a:hover   {color: rgb(255,255,255);}
+a:active  {color: rgb(255,255,255);}
 header{width:100%;}
 /* users/signup */
 input[type=text], input[type=email], input[type=password]{
@@ -37,14 +37,16 @@ nav{
   background: rgb(255,191,0);
 }
 main{padding:5%;}
-main h1.flash{
+h1.flash{
+  background-image: none;
   background-color: rgb(255,255,255);
   color: rgb(0,0,0);
-  margin: 0em auto 1em auto;
+  margin: auto;
   width:60%;
 }
 main h1{
-  background: rgb(122,156,255);
+  background-image: url('../images/TAG.svg');
+  background-size: cover;
   color: rgb(255,255,255);
   margin: -1.2em 0em 0em -0.8em;
   padding: 0.4em;
@@ -68,4 +70,17 @@ blockquote p{
 blockquote p.handle{
   text-align: right;
   font-size: 0.4em;
+  margin: 0em 6em 0em 0em;
+}
+blockquote h2.reply{
+  display: block;
+  background-image: url('REPLY.svg');
+  background-size: cover;
+  float:right;
+  text-align: right;
+  padding: 0.5em 1em 0em 0em;
+  margin: -0.1em -1em 0em 0em;
+  width:60px;
+  height: 25px;
+  font-size: 1em;
 }
