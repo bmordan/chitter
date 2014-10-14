@@ -116,6 +116,7 @@ DEPENDENCIES
   dm-postgres-adapter
   launchy
   rack-flash3
+  rack-protection
   rspec
   shotgun
   sinatra

@@ -4,12 +4,14 @@ env = ENV["RACK_ENV"] || "development"
 require 'sinatra'
 require 'sinatra/partial'
 require 'rack-flash'
+require 'rack-protection'
 require 'data_mapper'
 #Set up database tables for sinatra
 require_relative 'models/user'
 require_relative 'models/peep'
 require_relative 'models/poop'
 require_relative './seed'
+
 include Seed #run in irb: _multiseed
 # Setup for Sinatra
 set :root, File.dirname(__FILE__)
@@ -19,6 +21,7 @@ enable :sessions
 set :session_secret, 'OYJEVFIKHZORXTUXXOYXXGPDEYLLPWXD'
 use Rack::Flash
 use Rack::MethodOverride
+use Rack::Protection::EscapedParams
 # Setup logic controllers (routes)
 require_relative 'controllers/users'
 require_relative 'controllers/peeps'
