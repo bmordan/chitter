@@ -7,6 +7,8 @@
 
 Weekend 4 challenge. Build a twitter clone. This is going to be build in Ruby within the Sinartra framework and deployed to Heroku servers.
 
+visit the site: [Chitter](http://nameless-brushlands-9997.herokuapp.com/)
+
 Tested with loving care and attention with rspec and capybara.
 
     Go D1N0!
