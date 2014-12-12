@@ -2,6 +2,7 @@
 source "https://rubygems.org"
 ruby "2.0.0"
 
+gem "pg"
 gem "sinatra"
 gem "data_mapper"
 gem "dm-postgres-adapter"
@@ -16,4 +17,5 @@ group :test, :development do
   gem "capybara"
   gem "launchy"
   gem "shotgun"
+  gem "codeclimate-test-reporter"
 end

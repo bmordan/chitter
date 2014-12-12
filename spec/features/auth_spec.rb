@@ -13,7 +13,7 @@ feature "In order to use chitter I" do
 
   scenario "want to sing up" do
     _signup
-    expect(page).to have_content("log out")
+    expect(page).to have_css(".fa-sign-out")
   end
 
   scenario "join the users table" do
@@ -29,7 +29,7 @@ feature "In order to use chitter I" do
   scenario "want to sign in with my password" do
     _signin
     expect(page).to_not have_content 'log in'
-    expect(page).to have_content '+'
+    expect(page).to have_css '.fa-plus'
   end
 
   scenario "have confidence the wrong password is not accepted" do
@@ -39,14 +39,14 @@ feature "In order to use chitter I" do
 
   scenario "want to log out" do
     _signin
-    click_link 'log out'
+    click_link 'sign out'
     expect(page).to have_content "You have logged out"
   end
 
   scenario "when logged out I am unable to post peeps" do
      _signin
-    click_link 'log out'
-    expect(page).to_not have_content 'my peeps' 
+    click_link 'sign out'
+    expect(page).to_not have_content 'my peeps'
   end
 
 end

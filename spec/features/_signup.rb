@@ -5,20 +5,18 @@ module SignUp
     fill_in :name,     :with => "User Name"
     fill_in :handle,   :with => "u5rnme"
     fill_in :password, :with => password
-    click_on 'Join Chitter'    
+    click_on 'Join Chitter'
   end
 
   def _signin
-    visit '/peeps/home'
-    click_link 'log in'
+    visit '/users/login'
     fill_in :handle, :with => "or1gin"
     fill_in :password, :with => "passw0rd"
     click_on 'Log in'
   end
 
   def _wrongin
-    visit '/peeps/home'
-    click_link 'log in'
+    visit '/users/login'
     fill_in :handle, :with => "or1gin"
     fill_in :password, :with => "wrong"
     click_on 'Log in'

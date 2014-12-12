@@ -32,11 +32,11 @@ feature "Posting peeps is wicked because" do
   end
 
   scenario "i can log in and bloody well peep" do
-    click_link '+'
+    visit '/peeps/add'
     fill_in :peep, :with => "my latest peep"
     click_on 'Peep'
     expect(Peep.count).to eq 2
     #expect(page).to have_content "my latest peep"
   end
 
-end  
+end

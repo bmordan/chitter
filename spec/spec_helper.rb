@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 ENV["RACK_ENV"] = "test"
 
 require_relative '../app/main'
@@ -32,6 +35,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-  end 
+  end
 
 end
